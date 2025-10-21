@@ -1,4 +1,5 @@
 import './App.scss';
+import { TodoList } from './components/TodoList';
 
 // import usersFromServer from './api/users';
 // import todosFromServer from './api/todos';
@@ -28,6 +29,8 @@ export const App = () => {
           Add
         </button>
       </form>
+
+      <TodoList/>
     </div>
   );
 };
