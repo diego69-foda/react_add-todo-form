@@ -1,27 +1,45 @@
-export const TodoInfo = ( todo ) => {
-  <section className="TodoList">
-    <article data-id="1" className="TodoInfo TodoInfo--completed">
-      <h2 className="TodoInfo__title">{todo.title}</h2>
+type Todo = {
+  id: number | string;
+  title: string;
+  completed: boolean;
+};
 
-      <a className="UserInfo" href="mailto:Sincere@april.biz">
-        Leanne Graham
-      </a>
-    </article>
+type Props = {
+  todo: Todo;
+};
 
-    <article data-id="15" className="TodoInfo TodoInfo--completed">
-      <h2 className="TodoInfo__title">delectus aut autem</h2>
+export const TodoInfo = ({ todo }: Props) => {
+  const todoClasses = ['TodoInfo'];
 
-      <a className="UserInfo" href="mailto:Sincere@april.biz">
-        Leanne Graham
-      </a>
-    </article>
+  if (todo.completed) {
+    todoClasses.push('TodoInfo--completed');
+  }
 
-    <article data-id="2" className="TodoInfo">
-      <h2 className="TodoInfo__title">quis ut nam facilis et officia qui</h2>
+  return (
+    <section className="TodoList">
+      <article data-id="1" className="TodoInfo TodoInfo--completed">
+        <h2 className="TodoInfo__title">{todo.title}</h2>
 
-      <a className="UserInfo" href="mailto:Julianne.OConner@kory.org">
-        Patricia Lebsack
-      </a>
-    </article>
-  </section>;
+        <a className="UserInfo" href="mailto:Sincere@april.biz">
+          Leanne Graham
+        </a>
+      </article>
+
+      <article data-id="15" className="TodoInfo TodoInfo--completed">
+        <h2 className="TodoInfo__title">delectus aut autem</h2>
+
+        <a className="UserInfo" href="mailto:Sincere@april.biz">
+          Leanne Graham
+        </a>
+      </article>
+
+      <article data-id="2" className="TodoInfo">
+        <h2 className="TodoInfo__title">quis ut nam facilis et officia qui</h2>
+
+        <a className="UserInfo" href="mailto:Julianne.OConner@kory.org">
+          Patricia Lebsack
+        </a>
+      </article>
+    </section>
+  );
 };
